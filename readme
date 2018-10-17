@@ -1,0 +1,14 @@
+packback-angular6
+This chanllenge was to mimick the two files found in the root folder: Step 1.pdf Step 2.pdf
+
+1/ I started with using the header and footer in the app.component, and the main content inbetween (/router-outlet) would either be what you see in "step 1" or in "step 2". these views were handled by a router. "/" would be step 1 content. step 2 would be /form as follows: const appRoutes: Routes = [ {path: '',component:CaseStudiesComponent}, {path:"form",component:FormComponent} ]
+
+2/ the content in step 1 was typical css/html except for the "stats" section. I would imagine this would be updated as "questions asked" and "posts featured" increased. Therefore, I used a cs-stats component and data-binded the numbers to the class.
+
+3/ the last part of the step-1 was to add your email, then have it automatically populate the form in the /forms route. There are two ways I know to accomplish this a/ get the email and add it as a "paramater" to the route. this code is included in the request-demo.component but I didn't use it. b/ create a user.service.ts to capture user information and allow any component to 'set" and "get" data as needed. both the request-demo and the form.component import the user.service.
+
+4/ The form.component uses form logic to receive and populate the fields. ngModel and ngForm are used (view the form.component.html file).
+
+If I were to do that again, I would have a "user" folder for all "pieces" or components that have to do with "user" data. this would include the form, the user.service, and the request-demo.component.
+
+** svg images and Sass were suppose to be used. I use Sass in other projects -there is great benefit to this tool and would will use sass in the future. I would need to really have a good reason to come back to implement the svg images.. some day :)
